@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="178.0" prefWidth="339.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <top>
+        <HBox fillHeight="false" BorderPane.alignment="TOP_CENTER">
+            <children>
+                <Region HBox.hgrow="ALWAYS" />
+                <Label contentDisplay="TOP" text="Input" HBox.hgrow="NEVER">
+                    <HBox.margin>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                    </HBox.margin>
+                </Label>
+                <TextField fx:id="inputField" alignment="TOP_CENTER" onInputMethodTextChanged="#convert" onKeyTyped="#convert" prefHeight="25.0" prefWidth="95.0" />
+                <Region HBox.hgrow="ALWAYS" />
+            </children>
+            <BorderPane.margin>
+                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+            </BorderPane.margin>
+        </HBox>
+    </top>
+    <right>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+                <Label text="Output Scale" VBox.vgrow="NEVER">
+                    <VBox.margin>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                    </VBox.margin>
+                </Label>
+                <RadioButton fx:id="celsiusRad2" mnemonicParsing="false" onMouseClicked="#convert" text="Celsius" VBox.vgrow="NEVER">
+                    <VBox.margin>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                    </VBox.margin>
+                    <toggleGroup>
+                        <ToggleGroup fx:id="outputGroup" />
+                    </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="fahrenheitRad2" mnemonicParsing="false" onMouseClicked="#convert" text="Fahrenheit" toggleGroup="$outputGroup" VBox.vgrow="NEVER">
+                    <VBox.margin>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                    </VBox.margin>
+                </RadioButton>
+                <RadioButton fx:id="kelvinRad2" mnemonicParsing="false" onMouseClicked="#convert" text="Kelvin" toggleGroup="$outputGroup" VBox.vgrow="NEVER">
+                    <VBox.margin>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                    </VBox.margin>
+                </RadioButton>
+            </children>
+            <BorderPane.margin>
+                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+            </BorderPane.margin>
+        </VBox>
+    </right>
+    <bottom>
+        <HBox BorderPane.alignment="BOTTOM_CENTER">
+            <children>
+                <Region HBox.hgrow="ALWAYS" />
+                <Label text="Output" HBox.hgrow="NEVER">
+                    <HBox.margin>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                    </HBox.margin>
+                </Label>
+                <TextField fx:id="outputField" alignment="CENTER" disable="true" editable="false" prefHeight="25.0" prefWidth="95.0" />
+                <Region HBox.hgrow="ALWAYS" />
+            </children>
+            <BorderPane.margin>
+                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+            </BorderPane.margin>
+        </HBox>
+    </bottom>
+    <center>
+        <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+            <children>
+                <Region VBox.vgrow="ALWAYS" />
+            </children>
+        </VBox>
+    </center>
+    <left>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+                <Label text="Input Scale">
+                    <VBox.margin>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                    </VBox.margin>
+                </Label>
+                <RadioButton fx:id="celsiusRad1" mnemonicParsing="false" onMouseClicked="#convert" text="Celsius">
+                    <VBox.margin>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                    </VBox.margin>
+                    <toggleGroup>
+                        <ToggleGroup fx:id="inputGroup" />
+                    </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="fahrenheitRad1" mnemonicParsing="false" onMouseClicked="#convert" text="Fahrenheit" toggleGroup="$inputGroup">
+                    <VBox.margin>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                    </VBox.margin>
+                </RadioButton>
+                <RadioButton fx:id="kelvinRad1" mnemonicParsing="false" onMouseClicked="#convert" text="Kelvin" toggleGroup="$inputGroup">
+                    <VBox.margin>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                    </VBox.margin>
+                </RadioButton>
+            </children>
+        </VBox>
+    </left>
+</BorderPane>
